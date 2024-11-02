@@ -27,9 +27,11 @@ checkBtn.addEventListener('click', function () {
     } else if (userGuess > secretNum) {
       content = '📈 Too high...';
       currScore--;
+      userInput.value = '';
     } else if (userGuess < secretNum) {
       content = '📉 Too low..';
       currScore--;
+      userInput.value = '';
     } else {
       content = '🪅 You won!!!';
       body.style.backgroundColor = '#60b347';
@@ -43,7 +45,7 @@ checkBtn.addEventListener('click', function () {
     body.style.backgroundColor = 'red';
     setContent(number, secretNum);
     number.style.width = '20rem';
-    score--;
+    currScore--;
   }
 
   setContent(guessMsg, content);
